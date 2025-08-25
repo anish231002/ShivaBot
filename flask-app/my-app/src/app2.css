@@ -1,0 +1,245 @@
+/* Tailwind CSS equivalent styles using @apply */
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;    
+body {
+  @apply bg-mainBg text-textColor m-0 p-0 min-h-screen font-devanagari;
+  /* Dark mode */
+  @apply dark:bg-mainBgDark dark:text-textColorDark;
+}
+
+.container {
+  @apply w-screen max-w-[1600px] min-h-screen mx-auto rounded-lg overflow-hidden shadow-lg flex flex-col bg-mainBg;
+  @apply dark:bg-mainBgDark;
+}
+
+.header {
+  @apply bg-headerBg text-white px-6 py-4 flex justify-between items-center text-sm;
+  @apply dark:bg-headerBgDark dark:text-textColorDark;
+}
+
+.header-left, .header-right {
+  @apply flex items-center gap-2.5;
+}
+
+.avatar-header {
+  @apply w-7.5 h-7.5 rounded-full bg-white bg-opacity-30 flex justify-center items-center text-lg font-bold;
+}
+
+.avatar-header img {
+  @apply w-full h-full rounded-full;
+}
+
+.status-dot {
+  @apply w-2 h-2 rounded-full;
+}
+
+.status-dot.online {
+  @apply bg-greenStatus;
+}
+
+.status-dot.in-progress {
+  @apply bg-white;
+}
+
+.status-dot.connected {
+  @apply bg-greenStatus;
+}
+
+.header h1 {
+  @apply text-lg m-0 font-medium;
+}
+
+.header p {
+  @apply m-0 font-normal;
+}
+
+.main-content {
+  @apply min-h-[600px] h-[70vh] flex;
+}
+
+.video-section {
+  @apply flex-3 w-full min-h-[600px] pt-10 flex flex-col items-center relative justify-start;
+}
+
+.user-video-preview {
+  @apply absolute top-6 right-6 w-12 h-12 bg-gray-100 rounded-lg flex flex-col justify-center items-center text-black text-xs;
+  box-shadow: 0 2px 5px rgb(158, 104, 41);
+}
+
+.user-video-preview .material-icons {
+  @apply text-[40px] mb-1.5;
+}
+
+.main-video-area {
+  @apply rounded-lg w-[900px] h-[1350px] flex flex-col justify-center items-center mt-px p-0 shadow-md border border-borderColor;
+  background-color: #c48e6f;
+  @apply dark:border-borderColorDark;
+}
+
+.main-video-placeholder {
+  @apply w-[500px] h-[450px] rounded-full bg-cover bg-center overflow-hidden relative flex justify-center items-center;
+  background-image: url('front_angle.jpg');
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.main-video-inner {
+  @apply w-[90%] h-[90%] bg-gray-900 rounded-full absolute;
+}
+
+.main-video-area h2 {
+  @apply mt-5 mb-1.5 text-2xl text-textColor font-medium;
+  @apply dark:text-textColorDark;
+}
+
+.main-video-area p {
+  @apply text-sm text-secondaryTextColor mb-5;
+  @apply dark:text-secondaryTextColorDark;
+}
+
+.ai-powered-avatar-btn {
+  @apply bg-accentColor text-white border-none px-5 py-2.5 rounded-full text-sm cursor-pointer transition-colors duration-300;
+  @apply dark:bg-accentColorDark;
+}
+
+.ai-powered-avatar-btn:hover {
+  @apply bg-orange-600;
+}
+
+.controls {
+  @apply flex gap-4 mt-auto;
+}
+
+.controls button {
+  @apply bg-buttonBgColor border-none w-12 h-12 rounded-full flex justify-center items-center cursor-pointer shadow-md transition-colors duration-300;
+  @apply dark:bg-buttonBgColorDark;
+}
+
+.controls button .material-icons {
+  @apply text-2xl text-secondaryTextColor;
+  @apply dark:text-secondaryTextColorDark;
+}
+
+.controls button:hover {
+  @apply bg-gray-200;
+  @apply dark:bg-gray-600;
+}
+
+.end-call-btn {
+  @apply bg-redEndCall;
+}
+
+.end-call-btn .material-icons {
+  @apply text-white;
+}
+
+.end-call-btn:hover {
+  @apply bg-red-700;
+}
+
+.chat-section {
+  @apply flex-[5] bg-chatBg border-r border-borderColor flex flex-col min-w-[500px] min-h-[90vh] text-textColor;
+  @apply dark:bg-chatBgDark dark:border-borderColorDark dark:text-textColorDark;
+}
+
+.chat-input {
+  @apply bg-chatBg;
+  @apply dark:bg-chatBgDark;
+}
+
+.message p {
+  @apply bg-buttonBgColor text-textColor;
+  @apply dark:bg-buttonBgColorDark dark:text-textColorDark;
+}
+
+.chat-header {
+  @apply p-4 border-b border-borderColor flex items-center gap-2.5 text-accentColor;
+  @apply dark:border-borderColorDark dark:text-accentColorDark;
+}
+
+.chat-header .material-icons {
+  @apply text-2xl;
+}
+
+.chat-header h2 {
+  @apply text-lg m-0 font-medium;
+}
+
+.chat-messages {
+  @apply flex-grow p-4 overflow-y-auto flex flex-col gap-4 font-devanagari;
+}
+
+.message {
+  @apply flex items-start gap-2.5 font-devanagari;
+}
+
+.avatar-chat {
+  @apply w-7.5 h-7.5 rounded-full bg-gray-300 flex-shrink-0;
+}
+
+.message p {
+  @apply bg-buttonBgColor px-4 py-2.5 rounded-[18px] max-w-[80%] break-words text-sm leading-6 m-0;
+  @apply dark:bg-buttonBgColorDark;
+}
+
+.message span {
+  @apply text-xs text-secondaryTextColor self-end mb-0.5 flex-shrink-0;
+  @apply dark:text-secondaryTextColorDark;
+}
+
+.chat-input {
+  @apply p-4 border-t border-borderColor flex gap-2.5 items-center font-devanagari;
+  @apply dark:border-borderColorDark;
+}
+
+.chat-input input {
+  @apply flex-grow border border-borderColor rounded-full px-4 py-2.5 text-sm outline-none transition-colors duration-300 font-devanagari;
+  @apply dark:border-borderColorDark dark:bg-chatBgDark dark:text-textColorDark;
+}
+
+.chat-input input:focus {
+  @apply border-accentColor;
+  @apply dark:border-accentColorDark;
+}
+
+.chat-input button {
+  @apply bg-transparent border-none cursor-pointer p-2 rounded-full transition-colors duration-300;
+}
+
+.chat-input button .material-icons {
+  @apply text-2xl text-secondaryTextColor;
+  @apply dark:text-secondaryTextColorDark;
+}
+
+.chat-input button:hover {
+  @apply bg-gray-100;
+  @apply dark:bg-gray-700;
+}
+
+.chat-input button:last-child {
+  @apply bg-accentColor;
+  @apply dark:bg-accentColorDark;
+}
+
+.chat-input button:last-child .material-icons {
+  @apply text-white;
+}
+
+.chat-input button:last-child:hover {
+  @apply bg-orange-600;
+}
+
+.message.info p {
+  @apply italic text-gray-500 bg-transparent text-center;
+}
+
+.chat-input button[disabled] {
+  @apply opacity-60 cursor-not-allowed bg-gradient-to-r from-gray-300 to-gray-100 transition-opacity transition-colors duration-300;
+}
+
+/* Font family for Devanagari support */
+body, input, button, .message, .chat-messages, .chat-input {
+  @apply font-devanagari;
+}
